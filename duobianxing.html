@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多边形</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid #CCC;
+    }
+</style>
+<body>
+    <canvas width="300" height="400">
+
+    </canvas>
+<script>
+    let canvas = document.querySelector('canvas');
+    let ctx = canvas.getContext('2d');
+    const PI = Math.PI;
+
+
+//    ctx.arc(150,150,150,0,PI*2);
+    //    ctx.stroke();
+    poly(6);
+    function poly(num) {
+        let ang = 2 * Math.PI/num;
+        let r =100;
+        ctx.beginPath();
+        ctx.moveTo(150+r,200);
+        for(let i=0;i<num;i++){
+            let x = 150 + r*Math.cos(ang*i);
+                y = 200 + r*Math.sin(ang*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
